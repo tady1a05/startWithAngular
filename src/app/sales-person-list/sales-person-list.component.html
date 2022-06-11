@@ -1,0 +1,19 @@
+<table class="table table-dark table-striped">
+    <thead>
+            <td>Fisrt Name</td>
+            <td>Last Name</td>
+            <td>Age</td>
+            <td>Adult</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let salesPerson of salesPersonList">
+            <td>{{salesPerson.firstName}}</td>
+            <td>{{salesPerson.lastName}}</td>
+            <td>{{salesPerson.age}}</td>
+            <td>
+                <div *ngIf="salesPerson.age>=18; else elseBlock">Y</div>
+                <ng-template #elseBlock>N</ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table>
